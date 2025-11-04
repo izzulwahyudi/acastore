@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Top Up Robux Cepat & Murah | ACA Store</title>
+  <meta name="description" content="Top up Robux aman, cepat, dan murah. Bayar via QRIS/DANA/OVO/GoPay/BCA. Pesan langsung lewat WhatsApp — proses 1–10 menit." />
+  <link rel="icon" href="logo.jpg">
+  <meta property="og:title" content="Top Up Robux Cepat & Murah" />
+  <meta property="og:description" content="Pesan lewat WhatsApp, proses 1–10 menit. QRIS all payment." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#10b981" />
+  <!-- Tailwind CSS Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { display: ["Rubik", "ui-sans-serif", "system-ui"], body: ["Inter", "ui-sans-serif", "system-ui"] },
+          boxShadow: { block: "0 6px 0 0 rgba(0,0,0,0.25)" },
+          backgroundImage: {
+            grid: "radial-gradient(#10b98122 1px, transparent 1px)",
+          },
+          colors: {
+            brand: {
+              DEFAULT: "#10b981", // emerald-500
+              dark: "#059669",     // emerald-600
+              light: "#34d399",    // emerald-400
+            }
+          }
+        },
+      },
+    };
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    .card-select input:checked + label { outline: 3px solid #10b981; box-shadow: inset 0 0 0 2px white; }
+    .skew-roblox { transform: skewY(-2deg); }
+    .unskew { transform: skewY(2deg); }
+  </style>
+  <script>
+    // ====== SITE CONFIG — GANTI NOMOR WA ======
+    const WA_NUMBER = "6285777802452"; // ganti ke nomormu (format 62xxxx)
+
+    // ====== PRICE LIST SESUAI GAMBAR ======
+    const PRICE_LOGIN = [
+      { id: "l80",  title: "80 Robux",  robux: 80,  price: 14000,  eta: "1–10 mnt" },
+      { id: "l160", title: "160 Robux", robux: 160, price: 28000,  eta: "1–10 mnt", best: true },
+      { id: "l240", title: "240 Robux", robux: 240, price: 42000,  eta: "1–10 mnt" },
+      { id: "l320", title: "320 Robux", robux: 320, price: 56000,  eta: "1–15 mnt" },
+      { id: "l400", title: "400 Robux", robux: 400, price: 70000,  eta: "1–15 mnt" },
+      { id: "l500", title: "500 Robux", robux: 500, price: 75000,  eta: "1–20 mnt" },
+      { id: "l580", title: "580 Robux", robux: 580, price: 89000,  eta: "1–20 mnt" },
+      { id: "l660", title: "660 Robux", robux: 660, price: 103000, eta: "1–20 mnt" },
+      { id: "l800", title: "800 Robux", robux: 800, price: 140000, eta: "1–30 mnt" },
+      { id: "l1000",title: "1000 Robux",robux: 1000,price: 150000, eta: "1–30 mnt" },
+      { id: "l1400",title: "1400 Robux",robux: 1400,price: 220000, eta: "10–30 mnt" },
+      { id: "l1500",title: "1500 Robux",robux: 1500,price: 225000, eta: "10–30 mnt" },
+      { id: "l1800",title: "1800 Robux",robux: 1800,price: 280000, eta: "10–35 mnt" },
+      { id: "l2000",title: "2000 Robux",robux: 2000,price: 290000, eta: "10–35 mnt" },
+      { id: "l2500",title: "2500 Robux",robux: 2500,price: 365000, eta: "10–40 mnt" },
+      { id: "l3000",title: "3000 Robux",robux: 3000,price: 440000, eta: "10–45 mnt" },
+      { id: "l4000",title: "4000 Robux",robux: 4000,price: 580000, eta: "10–60 mnt" },
+      { id: "l5000",title: "5000 Robux",robux: 5000,price: 750000, eta: "10–60 mnt" },
+      { id: "l10000",title: "10.000 Robux",robux: 10000,price: 1400000, eta: "30–90 mnt" }
+    ];
+
+    const PRICE_REDEEM = [
+      { id: "r200", title: "Redeem 200 Robux", robux: 200, price: 40000, eta: "1–10 mnt" },
+      { id: "r400", title: "Redeem 400 Robux", robux: 400, price: 80000, eta: "1–10 mnt" },
+      { id: "r800", title: "Redeem 800 Robux", robux: 800, price: 160000, eta: "1–20 mnt" },
+      { id: "r1000",title: "Redeem 1000 Robux",robux: 1000,price: 180000,eta: "1–20 mnt" },
+      { id: "r2000",title: "Redeem 2000 Robux",robux: 2000,price: 360000,eta: "10–30 mnt" },
+    ];
+
+    const PRICE_PREMIUM = [
+      { id: "p450",  title: "Upgrade Premium 450 Robux",  robux: 450,  price: 75000, eta: "1–10 mnt" },
+      { id: "p1000", title: "Upgrade Premium 1000 Robux", robux: 1000, price: 150000, eta: "1–15 mnt" },
+      { id: "p2200", title: "Upgrade Premium 2200 Robux", robux: 2200, price: 320000, eta: "1–20 mnt" },
+    ];
+  </script>
+</head>
+<body class="bg-slate-950 text-white font-body">
+  <!-- Top bar -->
+  <header class="sticky top-0 z-40 border-b border-white/10 backdrop-blur bg-slate-950/70">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <img src="logo.jpg" alt="" class="w-12 h-12 rounded-lg object-cover">
+
+        <div class="leading-tight">
+          <p class="font-display font-bold tracking-wide">ACA Store</p>
+          <p class="text-xs text-white/60">Robux cepat • QRIS all payment</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex gap-6 text-sm text-white/80">
+        <a href="#paket" class="hover:text-white">Paket</a>
+        <a href="#cara" class="hover:text-white">Cara Order</a>
+        <a href="#faq" class="hover:text-white">FAQ</a>
+        <a href="#kontak" class="hover:text-white">Kontak</a>
+      </nav>
+      <a href="#order" class="px-4 py-2 rounded-xl bg-emerald-500 font-semibold shadow-block hover:translate-y-[2px] active:translate-y-[3px] transition">Pesan Sekarang</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative">
+    <div class="absolute inset-0 bg-[length:18px_18px] bg-grid"></div>
+    <div class="relative max-w-6xl mx-auto px-4 pt-14 pb-10">
+      <div class="skew-roblox bg-emerald-600/20 border border-emerald-500/30 rounded-3xl p-6 md:p-10">
+        <div class="unskew grid md:grid-cols-2 gap-8 items-center">
+          <div>
+            <h1 class="font-display text-3xl md:text-5xl font-extrabold leading-tight">
+              Top Up <span class="text-emerald-400">Robux</span> Aman 🔒<br/>Cepat ⚡ & Harga Hemat 💸
+            </h1>
+            <p class="mt-4 text-white/80 md:text-lg">Bayar via <span class="font-semibold">QRIS/DANA/OVO/GoPay/Transfer</span>. Order auto-format lewat WhatsApp, proses rata-rata <span class="font-semibold">1–10 menit</span>.</p>
+            <div class="mt-6 flex flex-wrap gap-3">
+              <span class="px-3 py-1 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm">Garansi Masuk</span>
+              <span class="px-3 py-1 rounded-lg bg-yellow-500/20 border border-yellow-500/40 text-yellow-300 text-sm">Trusted Seller</span>
+              <span class="px-3 py-1 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm">Support 07:00–22:00</span>
+            </div>
+          </div>
+          <!-- Gambar Roblox di dashboard atas -->
+          
+            <div class="bg-slate-900/70 border border-white/10 rounded-2xl p-6 shadow-block">
+        <h3 class="font-display text-xl font-bold">Kenapa pilih kami?</h3>
+        <ul class="mt-3 space-y-2 text-white/80 text-sm">
+          <li>✅ Proses kilat 1–10 menit (normal)</li>
+          <li>✅ Harga bersahabat + banyak pilihan paket</li>
+          <li>✅ Pembayaran fleksibel: QRIS, e-wallet, transfer</li>
+          <li>✅ Bantuan ramah, after-sales jelas</li>
+        </ul>
+        <div class="mt-5">
+          <h4 class="font-semibold">Metode Pembayaran</h4>
+          <div class="mt-2 flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-1 rounded-lg bg-white/10">QRIS</span>
+            <span class="px-2 py-1 rounded-lg bg-white/10">DANA</span>
+            <span class="px-2 py-1 rounded-lg bg-white/10">OVO</span>
+            <span class="px-2 py-1 rounded-lg bg-white/10">GoPay</span>
+            <span class="px-2 py-1 rounded-lg bg-white/10">BCA</span>
+          </div>
+        </div>
+        <div class="mt-6 text-xs text-white/60">
+          <p>Disclaimer: Situs ini <span class="underline">tidak berafiliasi</span> dengan Roblox Corporation. Semua merek adalah milik pemiliknya masing‑masing.</p>
+        </div>
+      </div>
+            
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order card -->
+  <section id="order" class="relative max-w-6xl mx-auto px-4 pt-14 pb-10">
+    <div class="grid lg:grid-cols-1 gap-6 items-start">
+      <!-- Form -->
+      <div class="lg:col-span-2 bg-slate-900/70 border border-white/10 rounded-2xl p-6 shadow-block">
+        <h2 class="font-display text-2xl md:text-3xl font-bold">Form Order</h2>
+        <p class="text-white/70 mt-1">Isi data dengan benar agar top up masuk ke akun yang tepat.</p>
+
+        <!-- Tabs metode -->
+        <div class="mt-4 flex gap-2 text-sm">
+          <button type="button" data-tab="login" class="tabBtn px-3 py-2 rounded-xl bg-emerald-500 text-black font-semibold">Login Reguler</button>
+          <button type="button" data-tab="redeem" class="tabBtn px-3 py-2 rounded-xl bg-slate-800 border border-white/10">Redeem Code</button>
+          <button type="button" data-tab="premium" class="tabBtn px-3 py-2 rounded-xl bg-slate-800 border border-white/10">Upgrade Premium</button>
+        </div>
+
+        <div class="mt-5 grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm text-white/70 mb-1">Username/email Roblox <span class="text-rose-400">*</span></label>
+            <input id="username" type="text" placeholder="cth: AlphaReturns" class="w-full px-3 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-emerald-500 outline-none" />
+          </div>
+          <div>
+            <label class="block text-sm text-white/70 mb-1">User ID (angka) <span class="text-white/50">(opsional)</span></label>
+            <input id="userid" type="text" inputmode="numeric" pattern="[0-9]*" placeholder="cth: 1234567890" class="w-full px-3 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-emerald-500 outline-none" />
+          </div>
+          <div>
+            <label class="block text-sm text-white/70 mb-1">Metode Pembayaran</label>
+            <select id="payment" class="w-full px-3 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-emerald-500 outline-none">
+              <option>QRIS</option>
+              <option>DANA</option>
+              <option>OVO</option>
+              <option>GoPay</option>
+              <option>BCA Transfer</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm text-white/70 mb-1">Catatan (opsional)</label>
+            <input id="note" type="text" placeholder="cth: kirim saat on / jam 19:00" class="w-full px-3 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-emerald-500 outline-none" />
+          </div>
+        </div>
+
+        <h3 class="font-display text-xl font-bold mt-6" id="paket">Pilih Paket Robux</h3>
+        <p class="text-xs text-white/60">Pilih salah satu paket di bawah sesuai metode di tab.</p>
+        <div id="packages" class="mt-4 grid sm:grid-cols-2 lg:grid-cols-3 gap-4 card-select"></div>
+
+        <button id="waButton" class="mt-6 w-full px-5 py-3 rounded-2xl bg-emerald-500 text-black font-semibold text-lg shadow-block hover:translate-y-[2px] active:translate-y-[3px] transition">
+          Pesan via WhatsApp
+        </button>
+        <p class="text-xs text-white/55 mt-2">Dengan menekan tombol di atas, Anda akan diarahkan ke WhatsApp Admin untuk konfirmasi & rincian pembayaran.</p>
+      </div>
+
+      
+    </div>
+  </section>
+
+  <!-- Cara order -->
+  <section id="cara" class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="font-display text-2xl md:text-3xl font-bold">Cara Order</h2>
+    <ol class="mt-4 grid md:grid-cols-3 gap-4">
+      <li class="bg-slate-900/70 border border-white/10 rounded-2xl p-4">
+        <p class="text-3xl">1️⃣</p>
+        <p class="font-semibold mt-1">Isi data & pilih paket</p>
+        <p class="text-white/70 text-sm">Pastikan username/user ID benar.</p>
+      </li>
+      <li class="bg-slate-900/70 border border-white/10 rounded-2xl p-4">
+        <p class="text-3xl">2️⃣</p>
+        <p class="font-semibold mt-1">Chat WhatsApp Admin</p>
+        <p class="text-white/70 text-sm">Klik tombol, pesan otomatis terisi.</p>
+      </li>
+      <li class="bg-slate-900/70 border border-white/10 rounded-2xl p-4">
+        <p class="text-3xl">3️⃣</p>
+        <p class="font-semibold mt-1">Bayar & tunggu Robux masuk</p>
+        <p class="text-white/70 text-sm">Proses rata-rata 1–10 menit.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-6xl mx-auto px-4 py-10">
+    <h2 class="font-display text-2xl md:text-3xl font-bold">FAQ</h2>
+    <div class="mt-4 grid md:grid-cols-2 gap-4">
+      <details class="bg-slate-900/70 border border-white/10 rounded-2xl p-4" open>
+        <summary class="font-semibold cursor-pointer">Bagaimana cara cek User ID Roblox?</summary>
+        <p class="text-white/70 mt-2 text-sm">Masuk ke profil Roblox via browser → lihat URL profil, angka di akhir adalah User ID. Contoh: <span class="font-mono">https://www.roblox.com/users/<strong>123456</strong>/profile</span>.</p>
+      </details>
+      <details class="bg-slate-900/70 border border-white/10 rounded-2xl p-4">
+        <summary class="font-semibold cursor-pointer">Berapa lama proses top up?</summary>
+        <p class="text-white/70 mt-2 text-sm">Normal 1–10 menit setelah pembayaran terkonfirmasi. Bisa lebih lama pada jam sibuk/maintenance.</p>
+      </details>
+      <details class="bg-slate-900/70 border border-white/10 rounded-2xl p-4">
+        <summary class="font-semibold cursor-pointer">Apakah aman?</summary>
+        <p class="text-white/70 mt-2 text-sm">Ribuan pelanggan telah mempercayai kami dengan bukti testimoni positif dan pelayanan cepat. Transaksi Anda 100% aman dan transparan — langsung terhubung dengan admin resmi ACA Store.</p>
+      </details>
+      <details class="bg-slate-900/70 border border-white/10 rounded-2xl p-4">
+        <summary class="font-semibold cursor-pointer">Bisa custom nominal?</summary>
+        <p class="text-white/70 mt-2 text-sm">Bisa! Tulis di catatan atau sebutkan saat chat WA, admin akan infokan harga.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Kontak / CTA -->
+  <section id="kontak" class="max-w-6xl mx-auto px-4 py-10">
+    <div class="bg-emerald-600/20 border border-emerald-500/30 rounded-3xl p-6 md:p-10 text-center">
+      <h2 class="font-display text-2xl md:text-3xl font-bold">Masih bingung pilih paket?</h2>
+      <p class="text-white/80 mt-2">Tanya admin, kami bantu rekomendasikan sesuai kebutuhan kamu.</p>
+      <a id="ctaWa" class="inline-block mt-5 px-6 py-3 rounded-2xl bg-emerald-500 text-black font-semibold shadow-block hover:translate-y-[2px] transition" href="#">Chat Admin di WhatsApp</a>
+    </div>
+  </section>
+
+  <footer class="border-t border-white/10">
+    <div class="max-w-6xl mx-auto px-4 py-8 text-sm text-white/60">
+      <p>© <span id="year"></span> ACA Store • All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const rupiah = (n) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(n);
+
+      // Render price list by tab
+      let currentTab = 'login';
+
+      function renderPackages(){
+        const packagesEl = document.getElementById('packages');
+        if(!packagesEl) return;
+        packagesEl.innerHTML = '';
+        const list = currentTab === 'login' ? PRICE_LOGIN : currentTab === 'redeem' ? PRICE_REDEEM : PRICE_PREMIUM;
+        list.forEach((p, idx) => {
+          const wrap = document.createElement('div');
+          wrap.className = 'relative';
+          wrap.innerHTML = `
+            <input id="${p.id}" name="package" type="radio" class="peer hidden" ${idx===0?"checked":""}>
+            <label for="${p.id}" class="block h-full cursor-pointer rounded-2xl bg-slate-800 border border-white/10 p-4 peer-checked:outline peer-checked:outline-emerald-500 relative">
+              ${p.best ? '<span class="absolute -top-3 left-3 text-[11px] px-2 py-0.5 rounded-lg bg-amber-500 text-black font-semibold">Best Deal</span>' : ''}
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-semibold text-lg">${p.title}</p>
+                  <p class="text-xs text-white/60">Estimasi: ${p.eta}</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-xl font-bold">${rupiah(p.price)}</p>
+                </div>
+              </div>
+            </label>`;
+          packagesEl.appendChild(wrap);
+        });
+      }
+
+      function getSelectedPackage(){
+        const selected = document.querySelector('input[name="package"]:checked');
+        if(!selected) return null;
+        const all = [...PRICE_LOGIN, ...PRICE_REDEEM, ...PRICE_PREMIUM];
+        return all.find(p => p.id === selected.id) || null;
+      }
+
+      function openWA(prefillText){
+        const url = `https://api.whatsapp.com/send?phone=${WA_NUMBER}&text=${encodeURIComponent(prefillText)}`;
+        window.open(url, '_blank');
+      }
+
+      // Tab behavior
+      document.querySelectorAll('.tabBtn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          currentTab = btn.dataset.tab;
+          document.querySelectorAll('.tabBtn').forEach(b=>{
+            b.classList.remove('bg-emerald-500','text-black','font-semibold');
+            b.classList.add('bg-slate-800','border','border-white/10');
+          });
+          btn.classList.add('bg-emerald-500','text-black','font-semibold');
+          btn.classList.remove('bg-slate-800','border','border-white/10');
+          renderPackages();
+        });
+      });
+
+      const waBtn = document.getElementById('waButton');
+      if(waBtn){
+        waBtn.addEventListener('click', () => {
+          const username = document.getElementById('username').value.trim();
+          const userid = document.getElementById('userid').value.trim();
+          const payment = document.getElementById('payment').value;
+          const note = document.getElementById('note').value.trim();
+          const pack = getSelectedPackage();
+
+          if(!username){
+            alert('Mohon isi Username Roblox.');
+            return;
+          }
+          if(!pack){
+            alert('Mohon pilih paket Robux.');
+            return;
+          }
+
+          const lines = [
+            'Halo Admin, saya mau order TOP UP ROBUX',
+            `Metode: ${currentTab === 'login' ? 'Login Reguler' : currentTab === 'redeem' ? 'Redeem Code' : 'Upgrade Premium'}`,
+            '— — —',
+            `Username: ${username}`,
+            userid ? `User ID: ${userid}` : null,
+            `Paket: ${pack.title}`,
+            `Harga: ${rupiah(pack.price)}`,
+            `Metode bayar: ${payment}`,
+            note ? `Catatan: ${note}` : null,
+            '— — —',
+            'Mohon konfirmasi ketersediaan & cara pembayaran. Terima kasih!'
+          ].filter(Boolean).join('\n');
+
+          openWA(lines);
+        });
+      }
+
+      document.getElementById('ctaWa')?.addEventListener('click', (e) => {
+        e.preventDefault();
+        openWA('Halo Admin, saya mau tanya paket top up Robux yang tersedia.');
+      });
+
+      // Init once DOM ready
+      renderPackages();
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Top Up Robux",
+    "description": "Layanan isi ulang Robux cepat dan aman. Order via WhatsApp.",
+    "brand": { "@type": "Brand", "name": "ACA Store" },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "IDR",
+      "lowPrice": "14000",
+      "highPrice": "1400000",
+      "offerCount": "27"
+    }
+  }
+  </script>
+</body>
+</html>
