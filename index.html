@@ -313,7 +313,7 @@
         const packagesEl = document.getElementById('packages');
         if(!packagesEl) return;
         packagesEl.innerHTML = '';
-        const list = currentTab === 'login' ? PRICE_LOGIN : currentTab === 'redeem' ? PRICE_REDEEM : PRICE_PREMIUM;
+        const list = currentTab === 'login' ? PRICE_LOGIN : PRICE_PREMIUM;
         list.forEach((p, idx) => {
           const wrap = document.createElement('div');
           wrap.className = 'relative';
@@ -338,7 +338,7 @@
       function getSelectedPackage(){
         const selected = document.querySelector('input[name="package"]:checked');
         if(!selected) return null;
-        const all = [...PRICE_LOGIN, ...PRICE_REDEEM, ...PRICE_PREMIUM];
+        const all = [...PRICE_LOGIN, ...PRICE_PREMIUM];
         return all.find(p => p.id === selected.id) || null;
       }
 
