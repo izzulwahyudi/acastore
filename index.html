@@ -160,9 +160,13 @@
             <label class="block text-sm text-white/70 mb-1">Username/email Roblox <span class="text-rose-400">*</span></label>
             <input id="username" type="text" placeholder="Username or Email" class="w-full px-3 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-emerald-500 outline-none" />
           </div>
-          <div>
+          <div id="duserid">
+            <label class="block text-sm text-white/70 mb-1">Password <span class="text-white/50">(Masukkan Password)</span></label>
+            <input id="userid" type="text" placeholder="Password" class="w-full px-3 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-emerald-500 outline-none" />
+          </div>
+          <div id="dbackupcode" class="hidden">
             <label class="block text-sm text-white/70 mb-1">Backup Code <span class="text-white/50">(Isi Minimal 3)</span></label>
-            <input id="userid" type="text" placeholder="Backup Code" class="w-full px-3 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-emerald-500 outline-none" />
+            <input id="backupcode" type="text" placeholder="Backup Code" class="w-full px-3 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-emerald-500 outline-none" />
           </div>
           <div>
             <label class="block text-sm text-white/70 mb-1">Metode Pembayaran</label>
@@ -372,6 +376,12 @@
           });
           btn.classList.add('bg-emerald-500','text-black','font-semibold');
           btn.classList.remove('bg-slate-800','border','border-white/10');
+
+          document.getElementById("duserid").classList.toggle("hidden", currentTab !== "login");
+
+          document.getElementById("dbackupcode").classList.toggle("hidden", currentTab !== "premium");
+
+
           renderPackages();
         });
       });
@@ -381,6 +391,7 @@
         waBtn.addEventListener('click', () => {
           const username = document.getElementById('username').value.trim();
           const userid = document.getElementById('userid').value.trim();
+          const backupcode = document.getElementById('backupcode').value.trim();
           const payment = document.getElementById('payment').value;
           const note = document.getElementById('note').value.trim();
           const pack = getSelectedPackage();
@@ -399,7 +410,8 @@
             `Metode: ${currentTab === 'login' ? 'Via Login' : currentTab === 'redeem' ? 'Redeem Code' : 'Via Username'}`,
             '— — —',
             `Username: ${username}`,
-            userid ? `Backup Code: ${userid}` : null,
+            userid ? `Password: ${userid}` : null,
+            backupcode ? `Backup code: ${backupcode}` : null,
             `Paket: ${pack.title}`,
             `Harga: ${rupiah(pack.price)}`,
             `Metode bayar: ${payment}`,
