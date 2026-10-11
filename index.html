@@ -44,27 +44,31 @@
 
     // ====== PRICE LIST SESUAI GAMBAR ======
     const PRICE_LOGIN = [
-      { id: "l80",  title: "80 Robux",  robux: 80,  price: 12500,  eta: "1–5 mnt", best: true },
-      { id: "l160", title: "160 Robux", robux: 160, price: 25000,  eta: "1–5 mnt"},
-      { id: "l240", title: "240 Robux", robux: 240, price: 37500,  eta: "1–5 mnt" },
-      { id: "l320", title: "320 Robux", robux: 320, price: 50000,  eta: "1–5 mnt" },
-      { id: "l500", title: "500 Robux", robux: 500, price: 67000,  eta: "1–5 mnt", best: true },
-      { id: "l1000",title: "1000 Robux",robux: 1000,price: 135000, eta: "1–5 mnt", best: true },
-      { id: "l1500",title: "1500 Robux",robux: 1500,price: 203000, eta: "1–5 mnt" },
-      { id: "l2000",title: "2000 Robux",robux: 2000,price: 270000, eta: "1–5 mnt", best: true },
-      { id: "l2500",title: "2500 Robux",robux: 2500,price: 338000, eta: "1–5 mnt" },
-      { id: "l3000",title: "3000 Robux",robux: 3000,price: 405000, eta: "1–5 mnt" },
-      { id: "l4000",title: "4000 Robux",robux: 4000,price: 540000, eta: "1–5 mnt" },
-      { id: "l5000",title: "5000 Robux",robux: 5000,price: 675000, eta: "1–5 mnt" },
-      { id: "l10000",title: "10.000 Robux",robux: 10000,price: 1350000, eta: "1–5 mnt" }
+      { id: "l80",  title: "80 Robux",  robux: 80,  price: 13500,  eta: "1–5 mnt", best: true },
+      { id: "l160", title: "160 Robux", robux: 160, price: 27000,  eta: "1–5 mnt"},
+      { id: "l240", title: "240 Robux", robux: 240, price: 40500,  eta: "1–5 mnt" },
+      { id: "l320", title: "320 Robux", robux: 320, price: 54000,  eta: "1–5 mnt" },
+      { id: "l500", title: "500 Robux", robux: 500, price: 70000,  eta: "1–5 mnt", best: true },
+      { id: "l1000",title: "1000 Robux",robux: 1000,price: 140000, eta: "1–5 mnt", best: true },
+      { id: "l2000",title: "2000 Robux",robux: 2000,price: 280000, eta: "1–5 mnt", best: true },
+      { id: "l3000",title: "3000 Robux",robux: 3000,price: 420000, eta: "1–5 mnt" },
+      { id: "l4000",title: "4000 Robux",robux: 4000,price: 560000, eta: "1–5 mnt" },
+      { id: "l5000",title: "5000 Robux",robux: 5000,price: 700000, eta: "1–5 mnt" },
     ];
 
     
 
     const PRICE_PREMIUM = [
-      { id: "p450",  title: "Upgrade Premium 450 Robux",  robux: 450,  price: 70000, eta: "1–5 mnt" },
-      { id: "p1000", title: "Upgrade Premium 1000 Robux", robux: 1000, price: 140000, eta: "1–5 mnt" },
-      { id: "p2200", title: "Upgrade Premium 2200 Robux", robux: 2200, price: 290000, eta: "1–5 mnt" },
+      { id: "p10",  title: "10 Robux",  robux: 10,  price: 1880, eta: "1–5 mnt" },
+      { id: "p20",  title: "20 Robux",  robux: 20,  price: 3760, eta: "1–5 mnt" },
+      { id: "p30",  title: "30 Robux",  robux: 30,  price: 5640, eta: "1–5 mnt" },
+      { id: "p40",  title: "40 Robux",  robux: 40,  price: 7520, eta: "1–5 mnt" },
+      { id: "p50",  title: "50 Robux",  robux: 50,  price: 9400, eta: "1–5 mnt" },
+      { id: "p100", title: "100 Robux", robux: 100, price: 15500, eta: "1–5 mnt" },
+      { id: "p200", title: "200 Robux", robux: 200, price: 31000, eta: "1–5 mnt" },
+      { id: "p500", title: "500 Robux", robux: 500, price: 77500, eta: "1–5 mnt" },
+      { id: "p700", title: "700 Robux", robux: 700, price: 108500, eta: "1–5 mnt" },
+      { id: "p1000", title: "1000 Robux", robux: 1000, price: 155000, eta: "1–5 mnt" },
     ];
   </script>
 </head>
@@ -148,7 +152,7 @@
         <!-- Tabs metode -->
         <div class="mt-4 flex gap-2 text-sm">
           <button type="button" data-tab="login" class="tabBtn px-3 py-2 rounded-xl bg-emerald-500 text-black font-semibold">Via Login</button>
-          <button type="button" data-tab="premium" class="tabBtn px-3 py-2 rounded-xl bg-slate-800 border border-white/10">Upgrade Premium Via Login</button>
+          <button type="button" data-tab="premium" class="tabBtn px-3 py-2 rounded-xl bg-slate-800 border border-white/10">Via Username</button>
         </div>
 
         <div class="mt-5 grid md:grid-cols-2 gap-4">
@@ -157,8 +161,8 @@
             <input id="username" type="text" placeholder="Username or Email" class="w-full px-3 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-emerald-500 outline-none" />
           </div>
           <div>
-            <label class="block text-sm text-white/70 mb-1">Password <span class="text-white/50">(wajib jika via login)</span></label>
-            <input id="userid" type="text" placeholder="Password" class="w-full px-3 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-emerald-500 outline-none" />
+            <label class="block text-sm text-white/70 mb-1">Backup Code <span class="text-white/50">(Isi Minimal 3)</span></label>
+            <input id="userid" type="text" placeholder="Backup Code" class="w-full px-3 py-2 rounded-xl bg-slate-800 border border-white/10 focus:border-emerald-500 outline-none" />
           </div>
           <div>
             <label class="block text-sm text-white/70 mb-1">Metode Pembayaran</label>
@@ -265,16 +269,16 @@
       <!-- Social Media Icons -->
 <div class="flex justify-center space-x-6 mt-6">
   <!-- Instagram -->
-  <a href="https://instagram.com/acastoreee" target="_blank"
+  <a href="https://instagram.com/acastore.idx" target="_blank"
      class="relative w-14 h-14 flex items-center justify-center rounded-full bg-gray-800 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_#10b981]">
     <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram" class="w-8 h-8">
     <span class="absolute inset-0 rounded-full ring-1 ring-emerald-500/40"></span>
   </a>
 
   <!-- Facebook -->
-  <a href="https://facebook.com/acastoreee" target="_blank"
+  <a href="https://www.tiktok.com/@acastoreidx" target="_blank"
      class="relative w-14 h-14 flex items-center justify-center rounded-full bg-gray-800 transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_#10b981]">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook" class="w-8 h-8">
+    <img src="https://cdn-icons-png.flaticon.com/128/3046/3046121.png" alt="Facebook" class="w-8 h-8">
     <span class="absolute inset-0 rounded-full ring-1 ring-emerald-500/40"></span>
   </a>
 
@@ -292,7 +296,7 @@
     <div class="w-24 h-[2px] bg-gradient-to-r from-transparent via-emerald-500 to-transparent mx-auto my-8"></div>
 
     <!-- Copyright -->
-    <p class="text-sm text-gray-500">© 2025 <span class="text-emerald-400 font-medium">ACA Store</span>. All rights reserved.</p>
+    <p class="text-sm text-gray-500">© 2026 <span class="text-emerald-400 font-medium">ACA Store</span>. All rights reserved.</p>
   </div>
 
   <!-- Background Glow Effect -->
@@ -392,10 +396,10 @@
 
           const lines = [
             'Halo Admin, saya mau order TOP UP ROBUX',
-            `Metode: ${currentTab === 'login' ? 'Via Login' : currentTab === 'redeem' ? 'Redeem Code' : 'Upgrade Premium'}`,
+            `Metode: ${currentTab === 'login' ? 'Via Login' : currentTab === 'redeem' ? 'Redeem Code' : 'Via Username'}`,
             '— — —',
             `Username: ${username}`,
-            userid ? `Password: ${userid}` : null,
+            userid ? `Backup Code: ${userid}` : null,
             `Paket: ${pack.title}`,
             `Harga: ${rupiah(pack.price)}`,
             `Metode bayar: ${payment}`,
